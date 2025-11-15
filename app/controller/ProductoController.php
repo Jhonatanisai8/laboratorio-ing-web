@@ -15,4 +15,13 @@ class ProductoController extends Controller
         $this->view('index', ['productos' => $productos]);
     }
 
+    public function create()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->productoModel->create($_POST);
+            header('location: /?controller=producto&action=index');
+        } else {
+            $this->view('create');
+        }
+    }
 }
