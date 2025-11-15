@@ -12,7 +12,7 @@ class Producto extends Model
     public function getById($id)
     {
         $stm = $this->db->prepare("SELECT * FROM producto WHERE id_producto = ?");
-        $stm->execute($_GET["id"]);
+        $stm->execute([$id]);
         return $stm->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -24,7 +24,7 @@ class Producto extends Model
 
     public function update($data, $id)
     {
-        $stm = $this->db->prepare("UPDATE producto SET codigo = ?, descripcion= ?,inventariable = ?,stock = ?,activo = ? ) WHERE id_producto = ?");
+        $stm = $this->db->prepare("UPDATE producto SET codigo = ?, descripcion= ?,inventariable = ?,stock = ?,activo = ?  WHERE id_producto = ?");
         return $stm->execute([$data["codigo"], $data["descripcion"], $data["inventariable"], $data["stock"], $data["activo"], $id]);
     }
 

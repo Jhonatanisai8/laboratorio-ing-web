@@ -39,8 +39,12 @@
                     <td><?php echo htmlspecialchars($producto["stock"]) ?></td>
                     <td><?php echo htmlspecialchars($producto["activo"]) ?></td>
                     <td>
-                        <a href="">EDITAR</a>
-                        <a href="">ELIMINAR</a>
+                        <a href="?controller=producto&action=edit&id_producto=<?php echo $producto['id_producto']; ?>">
+                            Editar
+                        </a>
+                        <a href="?controller=user&action=delete&id_producto=<?php echo $producto['id_producto']; ?>">
+                            ELIMINAR
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>

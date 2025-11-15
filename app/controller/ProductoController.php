@@ -24,4 +24,24 @@ class ProductoController extends Controller
             $this->view('create');
         }
     }
+
+    public function edit()
+    {
+        $id = $_GET["id_producto"];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->productoModel->update($_POST, $id);
+            header('location: /?controller=producto&action=index');
+        } else {
+            $producto = $this->productoModel->getById($id);
+            $this->view('edit', ['producto' => $producto]);
+        }
+    }
+
+    public function delete()
+    {
+        $id = $_GET["id_producto"];
+        $this->productoModel->delete($id);
+        header('location: /?controller=producto&action=index');
+    }
+
 }
