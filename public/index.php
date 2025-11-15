@@ -3,7 +3,7 @@
 require_once '../core/Autoloader.php';
 
 // Compatibilidad con PHP < 7 usando isset en lugar de ??.
-$controller = isset($_GET['controller']) ? $_GET['controller'] : 'user';
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'producto';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $controllerName = ucfirst($controller) . 'Controller';
 
