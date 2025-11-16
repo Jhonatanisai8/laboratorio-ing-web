@@ -18,8 +18,8 @@
 </div>
 <div class="container">
     <div>
-        <a style="margin: 10px;" class="btn btn-primary" href="?controller=producto&action=create">Crear un Nuevo
-            Producto</a>
+        <a style="margin: 10px;" class="btn btn-primary" href="?controller=producto&action=create">Crear Producto</a>
+        <a style="margin: 10px;" class="btn btn-success" href="?controller=transaccion&action=create">Crear Transacción</a>
     </div>
     <div>
         <table class="table table-bordered border-primary">

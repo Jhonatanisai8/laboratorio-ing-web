@@ -27,3 +27,16 @@ VALUES ('P0001', 'Cemento 25kg', 1, 120, 1),
 
 select *
 from producto;
+
+CREATE TABLE transacciones (
+    id_transaccion INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT NOT NULL,
+    nombre_producto VARCHAR(255) NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    subtotal DECIMAL(10, 2) NOT NULL,
+    igv DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    fecha_transaccion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
